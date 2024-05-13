@@ -3,7 +3,7 @@ import * as THREE from 'three';
 import { Water } from 'three/addons/objects/Water.js';
 import { Sky } from 'three/addons/objects/Sky.js';
 
-export function Ocean() {
+export function Ocean(props) {
   const containerRef = useRef();
 
   useEffect(() => {
@@ -144,5 +144,7 @@ export function Ocean() {
     };
   }, []);
 
-  return <div ref={containerRef} />;
+  return <div ref={containerRef} style={{ position: "absolute", width: "100%", height: "100%" }}>
+    {props.children}
+  </div>;
 }
